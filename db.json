@@ -1,0 +1,55 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "name": "Rodrigo Alves",
+      "fone": 75998754562,
+      "email": "igo.sud@hotmail.com",
+      "datanasc": "21/07/1926"
+    },
+    {
+      "name": "João",
+      "email": "johnny.johnny@co.com",
+      "fone": 9999999999,
+      "datanasc": "02/02/1970",
+      "id": 2
+    },
+    {
+      "name": "Maria",
+      "email": "maria.maria@dom.magia",
+      "fone": 75888888888,
+      "datanasc": "02/02/1982",
+      "id": 3
+    },
+    {
+      "name": "Sicrano",
+      "email": "sic@gmail.com",
+      "fone": 75999112233,
+      "datanasc": "31/01/1990",
+      "id": 5
+    },
+    {
+      "name": "Fulano de Tal",
+      "email": "fulaninho@email.com",
+      "fone": "75 99887766",
+      "id": 6,
+      "datanasc": "21/07/1996"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "name": "Gatorade",
+      "datavali": "21/11/2018",
+      "preco": "5,00",
+      "descricao": "blablablablablablablablablablablablabla é bom"
+    }
+  ],
+  "pedidos": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ]
+}
