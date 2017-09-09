@@ -186,7 +186,6 @@
                       self.loadClientes()
                     })
         });
-
        },
        salvarCliente(){
         if (this.selected.id!=null){  //EDITAR

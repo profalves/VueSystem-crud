@@ -1,41 +1,39 @@
 <template>
     <div id="app">
-        <nav class="nav">
-            <div class="nav-left">
-                <img src="assets/logo.png.ico">
-            </div>
-            <span class="nav-item">
-                <a v-link="{ path: '/' }" class="button is-primary">
-                    <span class="icon">
-                    <i class="fa fa-home"></i>
-                    </span>
-                    <span>Principal</span>
-                </a>
-                <a v-link="{ path: '/ccliente' }" class="button is-primary">
-                    <span class="icon">
-                    <i class="fa fa-link"></i>
-                    </span>
-                    <span>Clientes</span>
-                </a>
-                <a v-link="{ path: '/cproduto' }" class="button is-primary">
-                    <span class="icon">
-                    <i class="fa fa-bolt"></i>
-                    </span>
-                    <span>Produtos</span>
-                </a>
-                <a v-link="{ path: '/cpedido' }" class="button is-primary">
-                    <span class="icon">
-                    <i class="fa fa-bolt"></i>
-                    </span>
-                    <span>Pedidos</span>
-                </a>
-            </span>
-        </nav>
+        
+
+        <span class="nav-item">
+            <a v-link="{ path: '/' }" class="button is-primary">
+                <span class="icon">
+                <i class="fa fa-home"></i>
+                </span>
+                <span>Principal</span>
+            </a>
+            <a v-link="{ path: '/ccliente' }" class="button is-primary">
+                <span class="icon">
+                <i class="fa fa-link"></i>
+                </span>
+                <span>Clientes</span>
+            </a>
+            <a v-link="{ path: '/cproduto' }" class="button is-primary">
+                <span class="icon">
+                <i class="fa fa-bolt"></i>
+                </span>
+                <span>Produtos</span>
+            </a>
+            <a v-link="{ path: '/cpedido' }" class="button is-primary">
+                <span class="icon">
+                <i class="fa fa-bolt"></i>
+                </span>
+                <span>Pedidos</span>
+            </a>
+        </span>
+        
  
-        <div class="container" style="margin: 20px;">
-            <center>
-                <router-view></router-view>
-            </center>
+        <div class="container">
+            
+            <router-view></router-view>
+            
         </div>
 
         <footer>
