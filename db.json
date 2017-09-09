@@ -53,7 +53,25 @@
       "totalQte": "1",
       "totalValor": "1,30",
       "obs": "observações",
-      "pedidos-item": []
+      "pedidos-item": [
+          {
+              "nameProduto": "Gatorade",
+              "precoUnit": "5,00",
+              "quantidade": "2",
+              "totalValor": 10.00,
+              "Id": 1
+          }
+      ]
+    }
+  ],
+  "vendedor": [
+    {
+      "id": 1,
+      "name": "Trump!"
+    },
+    {
+      "id": 2,
+      "name": "Kim Yon Jin Jon"
     }
   ]
 }
