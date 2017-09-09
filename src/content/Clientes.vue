@@ -180,7 +180,11 @@
                  confirmButtonText: "Sim, pode apagar!", 
                  showLoaderOnConfirm: true,  
                  closeOnCancel: true }).then( 
-                 function () {
+                 function (value) {
+                     if (value === false) {
+                         return false; 
+                     }
+                      else{
                       self.$http.delete(`/clientes/${cliente.id}`).then(
                       result=>{
                         swal(
@@ -190,7 +194,8 @@
                         )
                       self.loadClientes()
                       })
-                 }
+                    }
+                 })
        },
        salvarCliente(){
         if (this.selected.id!=null){  //EDITAR
