@@ -48,8 +48,12 @@
   "pedidos": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "nameCliente": "Kim",
+      "nameVendedor": "Trump",
+      "totalQte": "1",
+      "totalValor": "1,30",
+      "obs": "observações",
+      "pedidos-item": []
     }
   ]
 }
