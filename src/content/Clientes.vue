@@ -5,7 +5,7 @@
     <div class="columns">
       <div class="column is-5">
         <p class="control has-addons">
-          <input class="input is-expanded" type="text" placeholder="Procure pelo nome" v-model="search" v-on:keyup.enter="searchClientes">
+          <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="search" v-on:keyup.enter="searchClientes">
           <a class="button is-info" @click.prevent="searchClientes">Search</a>
         </p>
       </div>
@@ -19,38 +19,37 @@
     </div>
     <div class="columns">
       <div class="column is-10">
-        <table class="table is-narrow is-bordered">
-          <thead>
-            <th>Nome</th>
-            <th>Telefone</th>
-            <th>email</th>
-            <th>Data de Nascimento</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="cliente in clientes">
-            <td>{{cliente.name}}</td>
-            <td>{{cliente.fone}}</td>
-            <td>{{cliente.email}}</td>
-            <td>{{cliente.datanasc}}</td>
-            <td class="is-icon">
+        <table class="table is-narrow is-bordered is-mobile">
+              <thead>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>email</th>
+                <th>Data de Nascimento</th>
+                <th>Ações</th>
 
-              <a href="#" @click.prevent="editarCliente(cliente)">
-                <i class="fa fa-edit"></i>
-              </a>
-              <a href="#" @click.prevent="removerCliente(cliente)">
-                <i class="fa fa-trash"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              <tr v-for="cliente in clientes">
+                <td>{{cliente.name}}</td>
+                <td>{{cliente.fone}}</td>
+                <td>{{cliente.email}}</td>
+                <td>{{cliente.datanasc}}</td>
+                <td class="is-icon">
+                  <a href="#" @click.prevent="editarCliente(cliente)">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a href="#" @click.prevent="removerCliente(cliente)">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
       
       <!-- Paginação -- 
       <Pagination :total="total" :page="page" :itens-per-page="itensPerPage" @change-page="onChangePage"></Pagination> -->
+      </div>
     </div>
-  </div>
 </div>
 
     <div id="modal_cliente" class="modal" :class="{'is-active':showModal}">
@@ -63,11 +62,11 @@
         <section class="modal-card-body">
           <label class="label">Nome</label>
           <p class="control">
-            <input class="input" type="text" placeholder="Nome" v-model="selected.name">
+            <input class="input" type="text" placeholder="Nome" v-model.trim="selected.name">
           </p>
           <label class="label">E-mail</label>
           <p class="control">
-            <input class="input" type="text" placeholder="Email" v-model="selected.email">
+            <input class="input" type="text" placeholder="Email" v-model.trim="selected.email">
           </p>
 
           <div class="columns">
@@ -116,13 +115,7 @@
     components: {
       Pagination
     },
-    methods: {
-      validateAll: function () {
-        this.$validator.validateAll()
-        if (!this.errors.any()) {
-          this.$refs.clientes.submit()
-        }
-      },  
+    methods: {  
       onChangePage(page){
         this.page = page
         this.loadClientes()

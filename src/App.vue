@@ -11,13 +11,13 @@
             </a>
             <a v-link="{ path: '/ccliente' }" class="button is-primary">
                 <span class="icon">
-                <i class="fa fa-link"></i>
+                <i class="fa fa-user"></i>
                 </span>
                 <span>Clientes</span>
             </a>
             <a v-link="{ path: '/cproduto' }" class="button is-primary">
                 <span class="icon">
-                <i class="fa fa-bolt"></i>
+                <i class="fa fa-barcode"></i>
                 </span>
                 <span>Produtos</span>
             </a>
@@ -31,9 +31,9 @@
         
  
         <div class="container">
-            
+            <div style="margin: 10px;">
             <router-view></router-view>
-            
+            </div>
         </div>
 
         <footer>
@@ -72,5 +72,6 @@ export default {
         background-color: lightseagreen;
         text-align: center;
         z-index: 5;
+        width: 100%;
     }
 </style>
