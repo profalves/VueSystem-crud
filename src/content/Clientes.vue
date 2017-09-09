@@ -99,6 +99,7 @@
   
 
   export default {
+    name: 'VueSystem',
     data () {
       return {
         isLoading: false,
@@ -180,19 +181,16 @@
                  showLoaderOnConfirm: true,  
                  closeOnCancel: true }).then( 
                  function () {
-                     if (result = dismiss) {
-                        return false
-                     }
-                     else {
-                        self.$http.delete(`/clientes/${cliente.id}`)
-                     }
+                      self.$http.delete(`/clientes/${cliente.id}`).then(
+                      result=>{
+                        swal(
+                            'Deletado!',
+                            'Este cadastro foi excluido!',
+                            'success'
+                        )
+                      self.loadClientes()
+                      })
                  }
-                 
-                 
-                 //self.$http.delete(`/clientes/${cliente.id}`) 
-                 //).finally(
-                //    self.loadClientes()
-                 )
        },
        salvarCliente(){
         if (this.selected.id!=null){  //EDITAR
