@@ -170,16 +170,16 @@
        },
        removerCliente(cliente){
         let self = this;
-        swal({  title: "Você tem certeza?",
-                 text: `Deseja apagar "${cliente.name}"`,   
+        swal({   title: `Você tem certeza que deseja apagar "${cliente.name}"?`,
+                 text: `Esta ação é irreversível!`,   
                  type: "warning",   
                  showCancelButton: true,   
                  confirmButtonColor: "#DD6B55",   
                  cancelButtonText: "Cancelar",
                  confirmButtonText: "Sim, pode apagar!", 
                  showLoaderOnConfirm: true,  
-                 closeOnConfirm: false }, function(){   
-                  
+                 closeOnConfirm: false }, 
+                function(){ 
                   self.$http.delete(`/clientes/${cliente.id}`).then(
                     result=>{
                       swal("Cliente Removido!")
