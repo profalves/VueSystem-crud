@@ -178,14 +178,21 @@
                  cancelButtonText: "Cancelar",
                  confirmButtonText: "Sim, pode apagar!", 
                  showLoaderOnConfirm: true,  
-                 closeOnConfirm: false }, 
-                function(){ 
-                  self.$http.delete(`/clientes/${cliente.id}`).then(
-                    result=>{
-                      swal("Cliente Removido!")
-                      self.loadClientes()
-                    })
-        });
+                 closeOnCancel: true }).then( 
+                 function () {
+                     if (result = dismiss) {
+                        return false
+                     }
+                     else {
+                        self.$http.delete(`/clientes/${cliente.id}`)
+                     }
+                 }
+                 
+                 
+                 //self.$http.delete(`/clientes/${cliente.id}`) 
+                 //).finally(
+                //    self.loadClientes()
+                 )
        },
        salvarCliente(){
         if (this.selected.id!=null){  //EDITAR

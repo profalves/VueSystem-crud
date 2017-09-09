@@ -22,32 +22,19 @@
       "id": 3
     },
     {
-      "name": "Sicrano",
-      "email": "sic@gmail.com",
-      "fone": 75999112233,
-      "datanasc": "31/01/1990",
+      "name": "Fulano de Tal",
+      "email": "fulaninho.dastrela@gmail.com",
+      "fone": "75999999999999",
+      "datanasc": "",
+      "id": 4
+    },
+    {
+      "name": "hgfj",
       "id": 5
     },
     {
-      "name": "Fulano de Tal",
-      "email": "fulaninho@email.com",
-      "fone": "75 99887766",
-      "id": 6,
-      "datanasc": "21/07/1996"
-    },
-    {
-      "name": "editado",
-      "email": "email editado",
-      "fone": "jkhasdklagh",
-      "datanasc": "ajklhfdjklh",
-      "id": 7
-    },
-    {
-      "name": "sdjkagjknklç",
-      "email": "jkhkjlhlçk",
-      "fone": "lkjçkljklçj",
-      "datanasc": "lçkjlçkjçlkjç",
-      "id": 8
+      "name": "gfjhfjd",
+      "id": 6
     }
   ],
   "produtos": [
