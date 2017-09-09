@@ -1,7 +1,5 @@
 <template>
     <div id="app">
-        
-
         <span class="nav-item">
             <a v-link="{ path: '/' }" class="button is-primary">
                 <span class="icon">
@@ -48,6 +46,7 @@
 import store from './vuex/store'
 
 export default {
+  name:'VueSystem',
   data () {
     return {
     }

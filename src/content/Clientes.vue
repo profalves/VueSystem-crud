@@ -6,7 +6,7 @@
       <div class="column is-5">
         <p class="control has-addons">
           <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="search" v-on:keyup.enter="searchClientes">
-          <a class="button is-info" @click.prevent="searchClientes">Search</a>
+          <a class="button is-info" @click.prevent="searchClientes"><i class="fa fa-search"></i></a>
         </p>
       </div>
       
@@ -18,7 +18,7 @@
 
     </div>
     <div class="columns">
-      <div class="column is-10">
+      <div class="column is-12">
         <table class="table is-narrow is-bordered is-mobile">
               <thead>
                 <th>Nome</th>
@@ -98,7 +98,7 @@
   
 
   export default {
-    name: 'VueSystem',
+    name: 'Clientes',
     data () {
       return {
         isLoading: false,

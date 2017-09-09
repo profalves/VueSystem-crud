@@ -1,6 +1,10 @@
-<template>Main Content</template>
-<script>
-    export default{
+<template>
+    <center>
         
-    }    
+    </center>
+</template>
+<script>
+export default{
+    name: 'Inicio'
+}    
 </script>

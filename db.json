@@ -27,6 +27,13 @@
       "fone": "75999999999999",
       "datanasc": "03/04/1975",
       "id": 4
+    },
+    {
+      "name": "teste",
+      "email": "teste",
+      "fone": "75522455665",
+      "datanasc": "01/01/2000",
+      "id": 5
     }
   ],
   "produtos": [
@@ -43,6 +50,28 @@
       "datavali": "31/12/2019",
       "descricao": "um trem muito gosto mesmo!",
       "id": 2
+    },
+    {
+      "name": "kgaDFBJklb",
+      "id": 3,
+      "preco": "100,00",
+      "datavali": ""
+    },
+    {
+      "name": "fdshgfsgfhgsh",
+      "id": 4
+    },
+    {
+      "name": "fdshgfsgfhgsh",
+      "id": 5,
+      "descricao": "teste desc\n"
+    },
+    {
+      "name": "teste",
+      "preco": "",
+      "datavali": "",
+      "descricao": "teste",
+      "id": 6
     }
   ],
   "pedidos": [
@@ -54,13 +83,13 @@
       "totalValor": "1,30",
       "obs": "observações",
       "pedidos-item": [
-          {
-              "nameProduto": "Gatorade",
-              "precoUnit": "5,00",
-              "quantidade": "2",
-              "totalValor": 10.00,
-              "Id": 1
-          }
+        {
+          "nameProduto": "Gatorade",
+          "precoUnit": "5,00",
+          "quantidade": "2",
+          "totalValor": 10,
+          "Id": 1
+        }
       ]
     }
   ],

@@ -6,11 +6,11 @@
       <div class="column is-5">
         <p class="control has-addons">
           <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="search" v-on:keyup.enter="searchProdutos">
-          <a class="button is-info" @click.prevent="searchProdutos">Search</a>
+          <a class="button is-info" @click.prevent="searchProdutos"><i class="fa fa-search"></i></a>
         </p>
       </div>
       
-      <div class="column is-7">
+      <div class="column is-1">
         <a class="button is-info" @click.prevent="newProdutos">Novo</a>
       </div>
 
@@ -19,78 +19,77 @@
     </div>
     <div class="columns">
       <div class="column is-10">
-        <table class="table is-narrow is-bordered">
-          <thead>
-            <th>Nome</th>
-            <th>Preço</th>
-            <th>Data de Validade</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="produto in produtos">
-            <td>{{produto.name}}</td>
-            <td>{{produto.preco}}</td>
-            <td>{{produto.datavali}}</td>
-            <td class="is-icon">
+        <table class="table is-narrow is-bordered is-mobile">
+              <thead>
+                <th>Nome</th>
+                <th>Data de Validade</th>
+                <th>Preço</th>
+                <th>Ações</th>
 
-              <a href="#" @click.prevent="editarProduto(produto)">
-                <i class="fa fa-edit"></i>
-              </a>
-              <a href="#" @click.prevent="removerProduto(produto)">
-                <i class="fa fa-trash"></i>
-              </a>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              <tr v-for="produto in produtos">
+                <td>{{produto.name}}</td>
+                <td>{{produto.datavali}}</td>
+                <td>{{produto.preco}}</td>
+                <td class="is-icon">
+                  <a href="#" @click.prevent="descProduto(produto)">
+                    <i class="fa fa-eye"></i>
+                  </a>
+                  <a href="#" @click.prevent="editarProduto(produto)">
+                    <i class="fa fa-edit"></i>
+                  </a>
+                  <a href="#" @click.prevent="removerProduto(produto)">
+                    <i class="fa fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+        </table>
       
       <!-- Paginação -- 
       <Pagination :total="total" :page="page" :itens-per-page="itensPerPage" @change-page="onChangePage"></Pagination> -->
-    </div>
-  </div>
-</div>
-
-<div id="modal_produto" class="modal" :class="{'is-active':showModal}">
-  <div class="modal-background"></div>
-  <div class="modal-card">
-    <header class="modal-card-head">
-      <p class="modal-card-title">Produto: {{selected.name}}</p>
-      <button class="delete" @click.prevent="showModal=false"></button>
-    </header>
-    <section class="modal-card-body">
-      <label class="label">Nome</label>
-      <p class="control">
-        <input class="input" type="text" placeholder="Nome" v-model="selected.name">
-      </p>
-     
-      <div class="columns">
-        <div class="column">  
-          <label class="label">Data de Validade</label>
-          <p class="control">
-            <input class="input" placeholder="Fixo/Celular" v-model="selected.datavali">
-          </p>
-        </div>
-        <div class="column">   
-          <label class="label">Preço</label>
-          <p class="control">
-            <input class="input" type="text" placeholder="dd/mm/yyyy" v-model="selected.preco">
-          </p>
-        </div>
       </div>
-      <label class="label">Detalhes do Produto</label>
-      <p class="control">
-        <input class="input" type="text" placeholder="Email" v-model="selected.descricao">
-      </p>  
-
-        
-    </section>
-    <footer class="modal-card-foot">
-      <a class="button is-primary" @click.prevent="salvarProduto">Salvar</a>
-      <a class="button" @click.prevent="showModal=false">Cancelar</a>
-    </footer>
-  </div>
+    </div>
 </div>
+
+    <div id="modal_produto" class="modal" :class="{'is-active':showModal}">
+      <div class="modal-background"></div>
+      <div class="modal-card">
+        <header class="modal-card-head">
+          <p class="modal-card-title">Produto: {{selected.name}}</p>
+          <button class="delete" @click.prevent="showModal=false"></button>
+        </header>
+        <section class="modal-card-body">
+          <label class="label">Nome</label>
+          <p class="control">
+            <input class="input" type="text" placeholder="Nome" v-model.trim="selected.name">
+          </p>
+          <div class="columns">
+            <div class="column">  
+              <label class="label">Preço</label>
+              <p class="control">
+                <input class="input" placeholder="R$" v-model="selected.preco">
+              </p>
+            </div>
+            <div class="column">   
+              <label class="label">Data de validade</label>
+              <p class="control">
+                <input class="input" type="text" placeholder="dd/mm/yyyy" v-model="selected.datavali">
+              </p>
+            </div>
+          </div>
+          <label class="label">Descrição</label>
+          <p class="control">
+              <textarea class="textarea" type="text" placeholder="Descricão do Produto" rows="10" v-model.trim="selected.descricao"></textarea>
+          </p>
+        </section>
+        <footer class="modal-card-foot">
+          <a class="button is-primary" @click.prevent="salvarProduto">Salvar</a>
+          <a class="button" @click.prevent="showModal=false">Cancelar</a>
+        </footer>
+      </div>
+    </div>
 </template>
 
 <script>
@@ -98,6 +97,7 @@
   
 
   export default {
+    name: 'Produtos',
     data () {
       return {
         isLoading: false,
@@ -114,7 +114,7 @@
     components: {
       Pagination
     },
-    methods: {
+    methods: {  
       onChangePage(page){
         this.page = page
         this.loadProdutos()
@@ -124,6 +124,17 @@
       },
       hideLoading(){
         this.isLoading=false;
+      },
+      descProduto() {
+        swal({
+          title: 'Descrição do Produto',
+          type: 'info',
+          html:
+            '<p></p>',
+          showCloseButton: true,
+          confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> Ok!',
+        })  
       },
       loadProdutos(){
 
@@ -163,23 +174,31 @@
        },
        removerProduto(produto){
         let self = this;
-        swal({  title: "Você tem certeza?",
-                 text: `Deseja apagar "${produto.name}"`,   
+        swal({   title: `Você tem certeza que deseja apagar "${produto.name}"?`,
+                 text: `Esta ação é irreversível!`,   
                  type: "warning",   
                  showCancelButton: true,   
                  confirmButtonColor: "#DD6B55",   
                  cancelButtonText: "Cancelar",
                  confirmButtonText: "Sim, pode apagar!", 
                  showLoaderOnConfirm: true,  
-                 closeOnConfirm: false }, function(){   
-                  
-                  self.$http.delete(`/produtos/${produto.id}`).then(
-                    result=>{
-                      swal("Produto Removido!")
+                 closeOnCancel: true }).then( 
+                 function (value) {
+                     if (value === false) {
+                         return false; 
+                     }
+                      else{
+                      self.$http.delete(`/produtos/${produto.id}`).then(
+                      result=>{
+                        swal(
+                            'Deletado!',
+                            'Este cadastro foi excluido!',
+                            'success'
+                        )
                       self.loadProdutos()
-                    })
-        });
-
+                      })
+                    }
+                 })
        },
        salvarProduto(){
         if (this.selected.id!=null){  //EDITAR
