@@ -1,7 +1,7 @@
 {
   "name": "vue-system",
   "version": "0.0.1",
-  "description": "A Vue.js + router + resource + vuex + bluma project",
+  "description": "A Vue.js + router + resource + vuex + bulma project",
   "author": "profalves <igo.sud@hotmail.com>",
   "scripts": {
     "watchify": "watchify -vd -p browserify-hmr -e src/main.js -o dist/build.js",

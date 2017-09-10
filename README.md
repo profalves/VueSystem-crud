@@ -1,6 +1,8 @@
 # vue-system
 
-> A Vue.js + router + resource + vuex + bluma project
+> A Vue.js + router + resource + vuex + bulma project
+
+Com o console do node aberto, execute os comandos
 
 ## Build Setup
 
