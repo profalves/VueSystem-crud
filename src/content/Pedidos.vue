@@ -61,32 +61,39 @@
         </header>
         <section class="modal-card-body">
           
-          <label class="label">Cliente</label>
+      
+          <!--<label class="label">Cliente</label>
           <div class="select">
               <select>
                 <option>Selecione um cliente...</option>
                 <option>With options</option>
               </select>
-          </div>
-          <!-- p class="control has-addons">
-          <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="search" v-on:keyup.enter="searchClientes">
+          </div> -->
+          <p class="control has-addons">
+          <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="searchCliente" v-on:keyup.enter="searchClientes">
               <a class="button is-info" @click.prevent="searchClientes"><i class="fa fa-search"></i></a>
           </p>
-          <span class="message is-primary">{{cliente.name}}</span>-->
+          <span class="message is-primary"><h2>{{searchCliente}}</h2></span>
           <hr>
           
-          <label class="label">Produto</label>
+          <!--<label class="label">Produto</label>
           <div class="select">
               <select>
                 <option>Selecione um produto...</option>
                 <option>With options</option>
               </select>
+          </div>-->
+          <div class="columns">
+              <div class="column">
+                  <p class="control has-addons">
+                  <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="searchProduto" v-on:keyup.enter="searchProdutos">
+                      <a class="button is-info" @click.prevent="searchProdutos"><i class="fa fa-search"></i></a>
+                  </p>
+              </div>
+              <div class="column">
+                  <span class="message is-primary"><h2>{{searchProduto}}</h2></span>
+              </div>
           </div>
-          <!--<p class="control has-addons">
-          <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="search" v-on:keyup.enter="searchClientes">
-              <a class="button is-info" @click.prevent="searchClientes"><i class="fa fa-search"></i></a>
-          </p>
-          <span class="message is-primary">{{produto.name}}</span>-->
 
           <div class="columns">
             <div class="column">  
@@ -116,16 +123,18 @@
                     <th>Cód.</th>
                     <th>Produto</th>
                     <th>Preço Un.</th>
+                    <th>Qtd.</th>
                     <th>Total</th>
                     <th>Ações</th>
 
                 </thead>
                 <tbody>
                   <tr v-for="cliente in clientes">
-                    <td>{{cliente.name}}</td>
-                    <td>{{cliente.fone}}</td>
-                    <td>{{cliente.email}}</td>
-                    <td>{{cliente.datanasc}}</td>
+                    <td>{{produto.id}}</td>
+                    <td>{{produto.name}}</td>
+                    <td>{{produto.preco}}</td>
+                    <td>0</td>
+                    <td>0,00</td>
                     <td class="is-icon">
                       <a href="#" @click.prevent="removerCliente(cliente)">
                         <i class="fa fa-trash"></i>
@@ -140,10 +149,10 @@
           </div>
         </div>
         <hr>
-        <a class="button is-info">Finalizar Pedido</a>
+        
         </section>
         <footer class="modal-card-foot">
-          <a class="button is-primary" @click.prevent="salvarPedido">Salvar</a>
+          <a class="button is-primary" @click.prevent="salvarPedido">Finalizar o Pedido</a>
           <a class="button" @click.prevent="showModal=false">Cancelar</a>
         </footer>
       </div>
@@ -168,7 +177,7 @@
         total: 0,
         selected: {},
         itensPerPage: 10,
-        showModal:false
+        showModal: false
       }
     },
     components: {
@@ -288,6 +297,9 @@
     },
   }
 </script>
-<style>
+<style scoped>
   .fixo{float: right; margin-right: 10px; margin-top: 0px; z-index: 1000;}
+  h2 {  
+    font-size: 25px;
+  }
 </style>
