@@ -113,7 +113,7 @@
       }
     },
     components: {
-      Pagination
+      Pagination,
     },
     methods: {  
       onChangePage(page){

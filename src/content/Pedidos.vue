@@ -61,19 +61,31 @@
         </header>
         <section class="modal-card-body">
           
-      
-          <!--<label class="label">Cliente</label>
-          <div class="select">
-              <select>
-                <option>Selecione um cliente...</option>
-                <option>With options</option>
-              </select>
-          </div> -->
-          <p class="control has-addons">
+        <div class="columns">
+            <div class="column">
+              <label class="label">Cliente</label>
+              <div class="select">
+                  <select>
+                    <option>Selecione um cliente...</option>
+                    <option>With options</option>
+                  </select>
+              </div>
+            </div>
+            <div class="column">
+              <label class="label">Vendedor</label>
+              <div class="select">
+                  <select>
+                    <option>Selecione um Vendedor...</option>
+                    <option>With options</option>
+                  </select>
+              </div>
+            </div>
+        </div>
+          <!--<p class="control has-addons">
           <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="searchCliente" v-on:keyup.enter="searchClientes">
               <a class="button is-info" @click.prevent="searchClientes"><i class="fa fa-search"></i></a>
           </p>
-          <span class="message is-primary"><h2>{{searchCliente}}</h2></span>
+          <span class="message is-primary"><h2>{{searchCliente}}</h2></span>-->
           <hr>
           
           <!--<label class="label">Produto</label>
@@ -149,7 +161,7 @@
           </div>
         </div>
         <hr>
-        
+        <h2>Total:</h2>
         </section>
         <footer class="modal-card-foot">
           <a class="button is-primary" @click.prevent="salvarPedido">Finalizar o Pedido</a>
