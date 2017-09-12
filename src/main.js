@@ -7,6 +7,7 @@ import VueResource from 'vue-resource'
 // import VeeValidate from 'vee-validate'
 import money from 'v-money'
 // import AwesomeMask from 'awesome-mask'
+import vSelect from 'vue-select'
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -20,6 +21,8 @@ Vue.use(money, {
   masked: false
 })
 // Vue.use(AwesomeMask)
+
+Vue.component('v-select', vSelect)
 
 const router = new VueRouter()
 router.map(RouterConfig)

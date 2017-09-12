@@ -66,8 +66,7 @@
               <label class="label">Cliente</label>
               <div class="select">
                   <select>
-                    <option>Selecione um cliente...</option>
-                    <option>With options</option>
+                    <option v-for="cliente in clientes">{{ cliente.name }}</option>
                   </select>
               </div>
             </div>
@@ -75,8 +74,7 @@
               <label class="label">Vendedor</label>
               <div class="select">
                   <select>
-                    <option>Selecione um Vendedor...</option>
-                    <option>With options</option>
+                    <option v-for="vendedor in vendedores">{{ vendedor.name }}</option>
                   </select>
               </div>
             </div>
@@ -95,35 +93,35 @@
                 <option>With options</option>
               </select>
           </div>-->
-          <div class="columns">
-              <div class="column">
-                  <p class="control has-addons">
-                  <input class="input is-expanded" type="text" placeholder="O que você procura?" v-model="searchProduto" v-on:keyup.enter="searchProdutos">
-                      <a class="button is-info" @click.prevent="searchProdutos"><i class="fa fa-search"></i></a>
-                  </p>
-              </div>
-              <div class="column">
-                  <span class="message is-primary"><h2>{{searchProduto}}</h2></span>
-              </div>
-          </div>
+          <v-select v-model="selected" :options="['foo','bar']"></v-select>
+          
+          <div>
+              <label class="label">Produto</label>
+              <p class="control has-addons">
+              <input class="input is-expanded" type="text" placeholder="Procure o produto pelo nome ou pelo código..." v-model="searchProduto" v-on:keyup.enter="searchProdutos">
+                  <a class="button is-info" @click.prevent="searchProdutos"><i class="fa fa-search"></i></a>
+              </p>
+              <span class="message is-primary"><h2>{{searchProduto}}</h2></span><br>
+          </div>   
+        
 
           <div class="columns">
             <div class="column">  
               <label class="label">Preço Unitário</label>
               <p class="control">
-                <input class="input" v-model="selected.fone">
+                <input class="input" v-model="produto.preco">
               </p>
             </div>
             <div class="column">   
               <label class="label">Quantidade</label>
               <p class="control">
-                <input class="input" type="number" v-model="selected.datanasc">
+                <input class="input" type="number">
               </p>
             </div>
             <div class="column">
               <label>&nbsp</label>
               <p>
-                <a class="button is-info" @click.prevent="">Incluir</a>
+                <a class="button is-info">Incluir</a>
               </p>
             </div>
           </div>
@@ -141,7 +139,7 @@
 
                 </thead>
                 <tbody>
-                  <tr v-for="cliente in clientes">
+                  <tr v-for="produto in produtos">
                     <td>{{produto.id}}</td>
                     <td>{{produto.name}}</td>
                     <td>{{produto.preco}}</td>
@@ -185,6 +183,7 @@
         clientes: [],
         produtos: [],
         pedidos: [],
+        vendedores: [],
         page: 1,
         total: 0,
         selected: {},

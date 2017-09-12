@@ -108,7 +108,7 @@
         total: 0,
         selected: {},
         itensPerPage: 10,
-        showModal:false
+        showModal: false
       }
     },
     components: {
@@ -124,17 +124,6 @@
       },
       hideLoading(){
         this.isLoading=false;
-      },
-      descProduto() {
-        swal({
-          title: 'Descrição do Produto',
-          type: 'info',
-          html:
-            '<p></p>',
-          showCloseButton: true,
-          confirmButtonText:
-            '<i class="fa fa-thumbs-up"></i> Ok!',
-        })  
       },
       loadProdutos(){
 
@@ -228,7 +217,17 @@
               this.loadProdutos()
             )
           }
-       }
+       },
+       descProduto(produto) {
+        swal({
+          title: 'Descrição do Produto',
+          type: 'info',
+          html: ' <p style="font-size:20px">' + `${produto.descricao}` + '</p>',
+          showCloseButton: true,
+          confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> Ok!',
+        })
+      },
      },
      created(){
       this.loadProdutos();

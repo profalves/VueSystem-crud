@@ -36,9 +36,11 @@
       "id": 5
     },
     {
-      "name": "teste hoje",
-      "email": "testeando@email.com",
-      "id": 7
+      "name": "Cristiane",
+      "email": "teste",
+      "fone": "teste",
+      "datanasc": "02/04/1982",
+      "id": 8
     }
   ],
   "produtos": [
@@ -53,24 +55,21 @@
       "name": "Nutella",
       "preco": "25,00",
       "datavali": "31/12/2019",
-      "descricao": "um trem muito gosto mesmo!",
+      "descricao": "um trem muito gostoso mesmo!",
       "id": 2
     },
     {
-      "name": "kgaDFBJklb",
+      "name": "GPS made in china",
       "id": 3,
       "preco": "100,00",
-      "datavali": ""
-    },
-    {
-      "name": "fdshgfsgfhgsh",
-      "id": 4
+      "datavali": "",
+      "descricao": "tá caro..."
     },
     {
       "name": "teste",
       "preco": "",
       "datavali": "",
-      "descricao": "teste",
+      "descricao": "teste ok!\n",
       "id": 6
     }
   ],
@@ -93,7 +92,7 @@
       ]
     }
   ],
-  "vendedor": [
+  "vendedores": [
     {
       "id": 1,
       "name": "Trump!"
