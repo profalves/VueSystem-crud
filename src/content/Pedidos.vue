@@ -14,8 +14,6 @@
         <a class="button is-info" @click.prevent="newPedidos">Novo</a>
       </div>
 
-
-
     </div>
     <div class="columns">
       <div class="column is-10">
@@ -51,6 +49,7 @@
       </div>
     </div>
 </div>
+    
 <!-- CADASTRAR PEDIDO-->
     <div id="modal_pedido" class="modal" :class="{'is-active':showModal}">
       <div class="modal-background"></div>
@@ -60,7 +59,19 @@
           <button class="delete" @click.prevent="showModal=false"></button>
         </header>
         <section class="modal-card-body">
-          
+            
+            
+            <!--V-SELECT--
+        <v-select
+            :debounce="250"
+            :on-search="getOptions"
+            :options="clienteOptions"
+            placeholder="Search GitHub Repositories..."
+            label="full_name"
+        >
+        </v-select> -->
+            
+            
         <div class="columns">
             <div class="column">
               <label class="label">Cliente</label>
@@ -93,7 +104,6 @@
                 <option>With options</option>
               </select>
           </div>-->
-          <v-select v-model="selected" :options="['foo','bar']"></v-select>
           
           <div>
               <label class="label">Produto</label>
@@ -172,7 +182,6 @@
 <script>
   import Pagination from './Pagination.vue'
   
-
   export default {
     name: 'Pedidos',
     data () {
@@ -188,13 +197,24 @@
         total: 0,
         selected: {},
         itensPerPage: 10,
-        showModal: false
+        showModal: false,
+        clienteOptions: null
       }
     },
     components: {
       Pagination
     },
     methods: {
+        /*/* select
+      getOptions(search, loading) {
+        loading(true)
+        this.$http.get(`/clientes?${cliente.name}`), {
+           q: search
+        }).then(resp => {
+           this.options = resp.data.items
+           loading(false)
+        })
+      },*/
         //paginação
       onChangePage(page){
         this.page = page
@@ -246,7 +266,7 @@
        },
        removerPedido(pedido){
         let self = this;
-        swal({   title: `Você tem certeza que deseja apagar "${pedido.name}"?`,
+        swal({   title: `Você tem certeza que deseja apagar o pedido n.${pedido.id}?`,
                  text: `Esta ação é irreversível!`,   
                  type: "warning",   
                  showCancelButton: true,   

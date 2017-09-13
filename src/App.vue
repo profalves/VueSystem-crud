@@ -5,7 +5,7 @@
                 <span class="icon">
                 <i class="fa fa-home"></i>
                 </span>
-                <span>Principal</span>
+                <span>Início</span>
             </a>
             <a v-link="{ path: '/ccliente' }" class="button is-primary">
                 <span class="icon">
@@ -68,9 +68,10 @@ export default {
         bottom: 0;
         left: 0;
         padding: 1rem;
-        background-color: lightseagreen;
+        background-color: lightslategray;
         text-align: center;
         z-index: 5;
         width: 100%;
+        color: aliceblue;
     }
 </style>

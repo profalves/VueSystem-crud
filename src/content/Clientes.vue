@@ -91,6 +91,7 @@
         </footer>
       </div>
     </div>
+    
 </template>
 
 <script>
@@ -109,13 +110,33 @@
         total: 0,
         selected: {},
         itensPerPage: 10,
-        showModal:false
+        showModal: false
       }
     },
     components: {
       Pagination,
     },
     methods: {  
+      validar() {
+        if (this.selected.name==null || this.selected.name=='') {
+          swal(
+            'Oopa...',
+            'Por favor, preencha o nome no cadastro!',
+            'error'
+          )
+          this.selected.name.focus();
+          return false
+        }
+        if (this.selected.email==null || this.selected.email=="" || this.selected.email.indexOf('@')==-1 || this.selected.email.indexOf('.')==-1) {
+          swal(
+            'Por favor, preencha um email válido!',
+            'Um email válido possui um @ e um ponto (.)',
+            'error'
+          )
+          this.selected.email.focus();
+          return false
+        }
+      },
       onChangePage(page){
         this.page = page
         this.loadClientes()
@@ -191,6 +212,7 @@
                  })
        },
        salvarCliente(){
+        this.validar()
         if (this.selected.id!=null){  //EDITAR
           this.$http.put(`/clientes/${this.selected.id}`,this.selected).then(
             response=>{

@@ -114,7 +114,27 @@
     components: {
       Pagination
     },
-    methods: {  
+    methods: {
+      validar() {
+        if (this.selected.name==null || this.selected.name=='') {
+          swal(
+            'Oopa...',
+            'Por favor, preencha o nome no cadastro!',
+            'error'
+          )
+          this.selected.name.focus();
+          return false
+        }
+        if (this.selected.preco==null || this.selected.preco=="") {
+          swal(
+            'Por favor, preencha o preço do produto!',
+            'Todos os produtos cadastrados precisam de um preço definido',
+            'error'
+          )
+          this.selected.email.focus();
+          return false
+        }
+      },
       onChangePage(page){
         this.page = page
         this.loadProdutos()
@@ -190,6 +210,7 @@
                  })
        },
        salvarProduto(){
+        this.validar()
         if (this.selected.id!=null){  //EDITAR
           this.$http.put(`/produtos/${this.selected.id}`,this.selected).then(
             response=>{

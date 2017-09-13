@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Rodrigo Alves",
-      "fone": 75998754562,
+      "fone": "7599875456",
       "email": "igo.sud@hotmail.com",
       "datanasc": "21/07/1926"
     },
@@ -41,6 +41,20 @@
       "fone": "teste",
       "datanasc": "02/04/1982",
       "id": 8
+    },
+    {
+      "name": "asdfas",
+      "id": 9
+    },
+    {
+      "name": "fad",
+      "email": "asds@asda.com",
+      "id": 10
+    },
+    {
+      "name": "gfshjfg",
+      "email": "sfdag@ehjrw.com",
+      "id": 11
     }
   ],
   "produtos": [
@@ -71,6 +85,18 @@
       "datavali": "",
       "descricao": "teste ok!\n",
       "id": 6
+    },
+    {
+      "id": 7,
+      "name": "teste2",
+      "preco": "15,00",
+      "datavali": "",
+      "descricao": "teste testando o teste pelo testador"
+    },
+    {
+      "name": "afag",
+      "preco": "1,00",
+      "id": 8
     }
   ],
   "pedidos": [
