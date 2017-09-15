@@ -50,11 +50,6 @@
       "name": "fad",
       "email": "asds@asda.com",
       "id": 10
-    },
-    {
-      "name": "gfshjfg",
-      "email": "sfdag@ehjrw.com",
-      "id": 11
     }
   ],
   "produtos": [
@@ -78,13 +73,6 @@
       "preco": "100,00",
       "datavali": "",
       "descricao": "tá caro..."
-    },
-    {
-      "name": "teste",
-      "preco": "",
-      "datavali": "",
-      "descricao": "teste ok!\n",
-      "id": 6
     },
     {
       "id": 7,

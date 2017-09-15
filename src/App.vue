@@ -19,7 +19,7 @@
                 </span>
                 <span>Produtos</span>
             </a>
-            <a v-link="{ path: '/cpedido' }" class="button is-primary">
+            <a v-link="{ path: '/cpedido' }" class="button is-primary" disabled>
                 <span class="icon">
                 <i class="fa fa-bolt"></i>
                 </span>

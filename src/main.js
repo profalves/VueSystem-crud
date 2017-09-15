@@ -14,6 +14,7 @@ require("moment/min/locales.min");
 moment.locale('pt-br');
 console.log(moment.locale());
 
+//VeeValidate config
 const config = {
   errorBagName: 'errors', // change if property conflicts.
   fieldsBagName: 'fields', 
@@ -51,6 +52,8 @@ Vue.use(money, {
 
 // Vue.component('v-select', vSelect)
 
-const router = new VueRouter()
+const router = new VueRouter({
+  mode: 'history'
+})
 router.map(RouterConfig)
 router.start(App, 'App')
