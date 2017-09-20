@@ -1,11 +1,11 @@
 <template>
     
   <h1>Teste Select</h1>
-  <ul>
+  <ol>
     <li v-for="tipo in tipos">
       <p>{{tipo.nome}}</p>
     </li>
-  </ul>
+  </ol>
     
     <br><br><br>
     
@@ -14,13 +14,13 @@
         {{ tipo.nome }}
       </option>
     </select>
-    <br>
+    <br><br>
     <span>Selecionado: {{ selected }}</span>
     
     <hr>
-==============================
     
 
+    <!-- CONTINUE ACIMA  antes da tag <hr>-->
 </template>
 
 <script>
@@ -33,7 +33,6 @@ export default {
     tipos: [],
     
   }),
-
   // Fetches posts when the component is created.
   created() {
     axios.get(ENDPOINT)

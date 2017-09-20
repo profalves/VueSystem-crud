@@ -6,6 +6,7 @@ import VueResource from 'vue-resource'
 // import VueMask from 'v-mask'
 import VeeValidate from 'vee-validate'
 import money from 'v-money'
+import axios from 'axios'
 import vSelect from 'vue-select'
 Vue.component('v-select', vSelect)
 

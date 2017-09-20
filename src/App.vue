@@ -13,15 +13,15 @@
                 </span>
                 <span>Agenda</span>
             </a>
-            <a v-link="{ path: '/cproduto' }" class="button is-dark" disabled>
+            <a v-link="{ path: '/testes' }" class="button is-primary">
                 <span class="icon">
-                <i class="fa fa-barcode"></i>
+                <i class="fa fa-bolt"></i>
                 </span>
-                <span>Content</span>
+                <span>Test</span>
             </a>
             <a v-link="{ path: '/cpedido' }" class="button is-dark" disabled>
                 <span class="icon">
-                <i class="fa fa-bolt"></i>
+                <i class="fa fa-barcode"></i>
                 </span>
                 <span>Content</span>
             </a>
