@@ -1,23 +1,24 @@
 import MainContent from './content/MainContent.vue'
 //import ResourceContent from './content/ResourceContent.vue'
 //import VuexContent from './content/VuexContent.vue'
-import Clientes from './content/Clientes.vue'
-import Produtos from './content/Produtos.vue'
-import Pedidos from './content/Pedidos.vue'
+import Compromissos from './content/Compromissos.vue'
+import Detalhes from './content/Detalhes.vue'
+import Testes from './content/Test.vue'
+
 
 
 const RouterConfig = {
     '/': {
         component: MainContent
     },
-    '/ccliente': {
-        component: Clientes
+    '/ccompromissos': {
+        component: Compromissos
     },
-    '/cproduto': {
-        component: Produtos
+    '/cdetalhe': {
+        component: Detalhes
     },
-    '/cpedido': {
-        component: Pedidos
+    '/testes': {
+        component: Testes
     }
 }
 

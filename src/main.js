@@ -6,8 +6,8 @@ import VueResource from 'vue-resource'
 // import VueMask from 'v-mask'
 import VeeValidate from 'vee-validate'
 import money from 'v-money'
-// import AwesomeMask from 'awesome-mask'
-// import vSelect from 'vue-select'
+import vSelect from 'vue-select'
+Vue.component('v-select', vSelect)
 
 var moment = require('moment');
 require("moment/min/locales.min");
@@ -48,9 +48,8 @@ Vue.use(money, {
   precision: 2,
   masked: false
 })
-// Vue.use(AwesomeMask)
 
-// Vue.component('v-select', vSelect)
+
 
 const router = new VueRouter({
   mode: 'history'

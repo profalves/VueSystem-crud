@@ -1,29 +1,29 @@
 <template>
     <div id="app">
         <span class="nav-item">
-            <a v-link="{ path: '/' }" class="button is-primary">
+            <a v-link="{ path: '/' }" class="button is-dark">
                 <span class="icon">
                 <i class="fa fa-home"></i>
                 </span>
                 <span>Início</span>
             </a>
-            <a v-link="{ path: '/ccliente' }" class="button is-primary">
+            <a v-link="{ path: '/ccompromissos' }" class="button is-dark">
                 <span class="icon">
                 <i class="fa fa-user"></i>
                 </span>
-                <span>Clientes</span>
+                <span>Agenda</span>
             </a>
-            <a v-link="{ path: '/cproduto' }" class="button is-primary">
+            <a v-link="{ path: '/cproduto' }" class="button is-dark" disabled>
                 <span class="icon">
                 <i class="fa fa-barcode"></i>
                 </span>
-                <span>Produtos</span>
+                <span>Content</span>
             </a>
-            <a v-link="{ path: '/cpedido' }" class="button is-primary" disabled>
+            <a v-link="{ path: '/cpedido' }" class="button is-dark" disabled>
                 <span class="icon">
                 <i class="fa fa-bolt"></i>
                 </span>
-                <span>Pedidos</span>
+                <span>Content</span>
             </a>
         </span>
         
@@ -35,7 +35,7 @@
         </div>
 
         <footer>
-            @ 2017. <a href="http://rodrigoalves.hol.es" target="_blank" class="link">Rodrigo Alves</a>
+            @ 2017. <a href="http://www.7virtual.com.br/" target="_blank" class="link">7Virtual</a>
         </footer>
 
         

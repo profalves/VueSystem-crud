@@ -52,61 +52,24 @@
       "id": 10
     }
   ],
-  "produtos": [
+  "compromissos": [
     {
       "id": 1,
-      "name": "Gatorade",
-      "datavali": "21/11/2018",
-      "preco": "5,00",
-      "descricao": "blablablablablablablablablablablablabla é bom"
+      "tipo": "tipo",
+      "usuario": "Rodrigo",
+      "status": "1",
+      "projeto": "projeto 01",
+      "obs": "observações ...",
+      "titulo": "primeiro compromisso",
+      "dataHora": "",
+      "numPrioridade": "1",
+      "plataforma": "mobile"
     },
     {
-      "name": "Nutella",
-      "preco": "25,00",
-      "datavali": "31/12/2019",
-      "descricao": "um trem muito gostoso mesmo!",
       "id": 2
-    },
-    {
-      "name": "GPS made in china",
-      "id": 3,
-      "preco": "100,00",
-      "datavali": "",
-      "descricao": "tá caro..."
-    },
-    {
-      "id": 7,
-      "name": "teste2",
-      "preco": "15,00",
-      "datavali": "",
-      "descricao": "teste testando o teste pelo testador"
-    },
-    {
-      "name": "afag",
-      "preco": "1,00",
-      "id": 8
     }
   ],
-  "pedidos": [
-    {
-      "id": 1,
-      "nameCliente": "Kim",
-      "nameVendedor": "Trump",
-      "totalQte": "1",
-      "totalValor": "1,30",
-      "obs": "observações",
-      "pedidos-item": [
-        {
-          "nameProduto": "Gatorade",
-          "precoUnit": "5,00",
-          "quantidade": "2",
-          "totalValor": 10,
-          "Id": 1
-        }
-      ]
-    }
-  ],
-  "vendedores": [
+  "usuarios": [
     {
       "id": 1,
       "name": "Trump!"
@@ -114,6 +77,26 @@
     {
       "id": 2,
       "name": "Kim Yon Jin Jon"
+    }
+  ],
+  "compromissosDet": [
+    {
+      "idDet": 1,
+      "idComp": 1,
+      "dataHoraAgend": "01/01/2017",
+      "dataHoraAtend": "01/09/2017",
+      "statusDet": "2",
+      "detalhes": ".... testado",
+      "excluido": false
+    },
+    {
+      "idDet": 2,
+      "idComp": 3,
+      "dataHoraAgend": "31/08/2017",
+      "dataHoraAtend": "01/09/2017",
+      "statusDet": "1",
+      "detalhes": ".... testado",
+      "excluido": false
     }
   ]
 }
